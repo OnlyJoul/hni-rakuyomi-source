@@ -39,17 +39,16 @@ jobs:
 
       - name: Prepare source list
         run: |
-          mkdir -p public/sources
+          mkdir -p public
 
           cp sources/en.hniscantrad/package.aix \
-             public/sources/en.hniscantrad-v1.aix
+             public/en.hniscantrad-v1.aix
 
-          curl -fL \
-            https://hni-scantrad.net/storage/img/logo/imfinippo-192.png \
-            -o public/en.hniscantrad-v1.png
+          cp sources/en.hniscantrad/res/icon.png \
+             public/en.hniscantrad-v1.png
 
           cat > public/index.min.json <<'EOF'
-          [{"id":"en.hniscantrad","name":"HNI-Scantrad","file":"sources/en.hniscantrad-v1.aix","icon":"en.hniscantrad-v1.png","lang":"en","version":1,"nsfw":0}]
+          [{"id":"en.hniscantrad","name":"HNI-Scantrad","file":"en.hniscantrad-v1.aix","icon":"en.hniscantrad-v1.png","lang":"en","version":1,"nsfw":0}]
           EOF
 
           cat > public/index.html <<'EOF'
@@ -61,8 +60,7 @@ jobs:
           </head>
           <body>
             <h1>HNI-Scantrad Rakuyomi Source</h1>
-            <p>Source list:</p>
-            <a href="index.min.json">index.min.json</a>
+            <p><a href="index.min.json">index.min.json</a></p>
           </body>
           </html>
           EOF
