@@ -1,0 +1,10 @@
+{
+  "info": {
+    "id": "en.hniscantrad",
+    "name": "HNI-Scantrad",
+    "version": 1,
+    "url": "https://hni-scantrad.net/",
+    "contentRating": 0,
+    "languages": ["en"]
+  }
+}
