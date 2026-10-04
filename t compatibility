@@ -1,0 +1,54 @@
+warning: in the working copy of '.github/workflows/publish.yml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'sources/en.hniscantrad/res/source.json', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml[m
+[1mindex 7daa3c5..6166f9e 100644[m
+[1m--- a/.github/workflows/publish.yml[m
+[1m+++ b/.github/workflows/publish.yml[m
+[36m@@ -1,4 +1,4 @@[m
+[31m-﻿name: Build and publish HNI source[m
+[32m+[m[32mname: Build and publish HNI source[m
+ [m
+ on:[m
+   push:[m
+[36m@@ -42,13 +42,13 @@[m [mjobs:[m
+           mkdir -p public[m
+ [m
+           cp sources/en.hniscantrad/package.aix \[m
+[31m-             public/en.hniscantrad-v1.aix[m
+[32m+[m[32m             public/en.hniscantrad-v2.aix[m
+ [m
+           cp sources/en.hniscantrad/res/icon.png \[m
+[31m-             public/en.hniscantrad-v1.png[m
+[32m+[m[32m             public/en.hniscantrad-v2.png[m
+ [m
+           cat > public/index.min.json <<'EOF'[m
+[31m-          [{"id":"en.hniscantrad","name":"HNI-Scantrad","file":"en.hniscantrad-v1.aix","icon":"en.hniscantrad-v1.png","lang":"en","version":1,"nsfw":0}][m
+[32m+[m[32m          [{"id":"en.hniscantrad","name":"HNI-Scantrad","file":"en.hniscantrad-v2.aix","icon":"en.hniscantrad-v2.png","lang":"en","version":2,"nsfw":0}][m
+           EOF[m
+ [m
+           cat > public/index.html <<'EOF'[m
+[36m@@ -85,3 +85,4 @@[m [mjobs:[m
+       - name: Deploy GitHub Pages[m
+         id: deployment[m
+         uses: actions/deploy-pages@v4[m
+[41m+[m
+[1mdiff --git a/sources/en.hniscantrad/res/source.json b/sources/en.hniscantrad/res/source.json[m
+[1mindex 94bdf81..66d13cc 100644[m
+[1m--- a/sources/en.hniscantrad/res/source.json[m
+[1m+++ b/sources/en.hniscantrad/res/source.json[m
+[36m@@ -1,10 +1,12 @@[m
+ {[m
+   "info": {[m
+     "id": "en.hniscantrad",[m
+[32m+[m[32m    "lang": "en",[m
+     "name": "HNI-Scantrad",[m
+[31m-    "version": 1,[m
+[32m+[m[32m    "version": 2,[m
+     "url": "https://hni-scantrad.net/",[m
+[32m+[m[32m    "nsfw": 0,[m
+     "contentRating": 0,[m
+     "languages": ["en"][m
+   }[m
+[31m-}[m
+[32m+[m[32m}[m
+\ No newline at end of file[m

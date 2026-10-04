@@ -1,4 +1,4 @@
-﻿name: Build and publish HNI source
+name: Build and publish HNI source
 
 on:
   push:
@@ -42,13 +42,13 @@ jobs:
           mkdir -p public
 
           cp sources/en.hniscantrad/package.aix \
-             public/en.hniscantrad-v1.aix
+             public/en.hniscantrad-v2.aix
 
           cp sources/en.hniscantrad/res/icon.png \
-             public/en.hniscantrad-v1.png
+             public/en.hniscantrad-v2.png
 
           cat > public/index.min.json <<'EOF'
-          [{"id":"en.hniscantrad","name":"HNI-Scantrad","file":"en.hniscantrad-v1.aix","icon":"en.hniscantrad-v1.png","lang":"en","version":1,"nsfw":0}]
+          [{"id":"en.hniscantrad","name":"HNI-Scantrad","file":"en.hniscantrad-v2.aix","icon":"en.hniscantrad-v2.png","lang":"en","version":2,"nsfw":0}]
           EOF
 
           cat > public/index.html <<'EOF'
@@ -85,3 +85,4 @@ jobs:
       - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
